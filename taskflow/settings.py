@@ -129,3 +129,16 @@ MAILERS = {
 
 LOGIN_REDIRECT_URL = "task_list"
 LOGOUT_REDIRECT_URL = "login"
+
+import os
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("POSTGRES_DB", "taskflow"),
+        "USER": os.environ.get("POSTGRES_USER", "taskflow"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "taskflow"),
+        "HOST": os.environ.get("POSTGRES_HOST", "db"),
+        "PORT": "5432",
+    }
+}
