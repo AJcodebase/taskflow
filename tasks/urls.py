@@ -6,7 +6,6 @@ urlpatterns = [
     path("<int:task_id>/toggle/", views.toggle_task, name="toggle_task"),
     path("<int:task_id>/delete/", views.delete_task, name="delete_task"),
 ]
-taskflow/urls.py:
 
 from django.contrib import admin
 from django.urls import path, include
