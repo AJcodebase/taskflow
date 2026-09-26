@@ -29,7 +29,10 @@
     <input type="date" name="due_date">
     <button type="submit" class="btn">Add</button>
   </form>
-
+  <form method="post" action="{% url 'clear_completed' %}">
+  {% csrf_token %}
+  <button type="submit" class="btn" style="background:var(--text-muted)">Clear completed</button>
+  </form>
   <ul id="task-list">
     {% for task in tasks %}
       <li data-done="{{ task.done|yesno:'true,false' }}">
